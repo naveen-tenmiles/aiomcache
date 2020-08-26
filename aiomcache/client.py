@@ -103,8 +103,8 @@ class Client(object):
                 flags = int(terms[2])
                 length = int(terms[3])
 
-                if flags != 0:
-                    raise ClientException('received non zero flags')
+#                if flags != 0:
+#                    raise ClientException('received non zero flags')
 
                 val = (yield from conn.reader.readexactly(length+2))[:-2]
                 if key in received:
